@@ -16,6 +16,11 @@ import java.util.List;
 // add annotation to allow cross site origin requests
 public class CategoriesController
 {
+    public CategoriesController(CategoryDao categoryDao, ProductDao productDao) {
+        this.categoryDao = categoryDao;
+        this.productDao = productDao;
+    }
+
     private CategoryDao categoryDao;
     private ProductDao productDao;
 
