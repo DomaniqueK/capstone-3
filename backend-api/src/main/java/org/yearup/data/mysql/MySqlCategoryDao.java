@@ -83,7 +83,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Did not create new rows." + e);
         }
         return null;
     }
@@ -99,10 +99,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             preparedStatement.setInt(1, categoryId);
             preparedStatement.setString(2, category.getName());
             preparedStatement.setString(3, category.getDescription());
-            ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error in updating rows" + e);
         }
     }
 
@@ -115,10 +115,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         try(Connection connection = getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, categoryId);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error in deleting rows" + e);
         }
     }
 
