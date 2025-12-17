@@ -74,11 +74,12 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, category.getName());
             preparedStatement.setString(2, category.getDescription());
-            ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
 
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                Category newCategory = mapRow(resultSet);
-                return category;
+                int newRow = resultSet.getInt(1);
+                return getById(newRow);
             }
 
         } catch (SQLException e) {
