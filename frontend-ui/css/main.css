@@ -95,6 +95,23 @@ main > .content-form .cart-item
     border-bottom: solid 1px #ccc;
 }
 
+main > .content::-webkit-scrollbar {
+    width: 8px;
+}
+
+main > .content::-webkit-scrollbar-track {
+    background: #fff0f3; /* Lightest pink */
+}
+
+main > .content::-webkit-scrollbar-thumb {
+    background: #ffb3c1; /* Soft rose */
+    border-radius: 10px;
+}
+
+main > .content::-webkit-scrollbar-thumb:hover {
+    background: #ff8fab; /* Darker pink when you grab it */
+}
+
 .content-form .photo
 {
     display: flex;
