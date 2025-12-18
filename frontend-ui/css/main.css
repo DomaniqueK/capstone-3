@@ -4,16 +4,19 @@ header
     justify-content: space-between;
     align-items: center;
 
+
     height: 10vh;
 
     padding: 5px 15px;
-    border-bottom: solid 1px #555;
-    box-shadow: 5px 2px #eee;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ffc2d1;
+    box-shadow: 0 4px 10px rgba(255, 175, 204, 0.2);
 }
 
 header img
 {
-    height: 100%;
+    height: 80%;
+    border-radius: 50%
 }
 
 header div{
@@ -28,6 +31,8 @@ header #links
     justify-content: flex-start;
     align-items: flex-end;
     padding-right: 20px;
+    font-weight: bold:
+    color: #ff8fab;
 }
 
 header .cart
@@ -36,6 +41,7 @@ header .cart
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
+    color: #fb6f92:
 }
 
 header .cart #cart-items
@@ -58,10 +64,13 @@ main > .filter-box
 {
     width: 350px;
     padding: 15px;
+    background: #ffe5ec;
+    border-radius: 15px;
+    margin-left: 10px;
 }
 
 main #min-price .slider-selection {
-    background: #BABABA;
+    background: #ff8fab;
 }
 
 main > .content
@@ -119,10 +128,18 @@ main > .content-form .cart-item
 
     justify-content: space-between;
     /*width: 30%;*/
-    border: solid 1px #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 5px;
+    border: 2px solid #ffc2d1;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: white;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 15px rgba(255, 175, 204, 0.3)
+
 }
 .product  .photo
 {
@@ -134,13 +151,15 @@ main > .content-form .cart-item
 {
     width: 33%;
     cursor: pointer;
-    border: solid 1px #ccc;
+    border: 2px solid #ffe5ec;
+    border-radius: 10px;
 }
 
 .product .price
 {
     font-weight: 900;
-    color: #924a24;
+    color: #fb6f92;
+    font-size: 1.2em;
 }
 
 .modal-body img
@@ -169,7 +188,7 @@ main > .content-form .cart-item
     justify-content: center;
     position: absolute;
     top: 0;
-    background-color: #777777aa;
+    background-color: rgba(255, 182, 193, 0.7);
     width: 100vw;
     height: 100vh;
     z-index: 1000;
@@ -178,7 +197,10 @@ main > .content-form .cart-item
 
 .modal-dialog
 {
-    width: 50vw;
+  background: white;
+      border-radius: 25px;
+      padding: 20px;
+      border: 3px solid #ffc2d1;
 }
 
 #errors
@@ -197,6 +219,9 @@ main > .content-form .cart-item
 
 .alert
 {
-    margin-bottom: 2px !important;
+   background-color: #ffe5ec !important;
+       border: 1px solid #ff8fab !important;
+       color: #fb6f92 !important;
+       border-radius: 15px;
 }
 
